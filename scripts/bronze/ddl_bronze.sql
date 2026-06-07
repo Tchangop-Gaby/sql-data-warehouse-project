@@ -10,7 +10,7 @@ Description:
 -- Customers table
 DROP TABLE IF EXISTS bronze.mstr_customers;
 
-CREATE TABLE IF NOT EXISTS bronze.mstr_customers (
+CREATE TABLE bronze.mstr_customers (
 	customer_id VARCHAR(30),
 	name VARCHAR(100),
 	country VARCHAR(100),
@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS bronze.mstr_customers (
 -- Products table
 DROP TABLE IF EXISTS bronze.mstr_products;
 
-CREATE TABLE IF NOT EXISTS bronze.mstr_products (
+CREATE TABLE bronze.mstr_products (
 	product_id VARCHAR(30),
 	product_name VARCHAR(50),
 	category VARCHAR(50),
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS bronze.mstr_products (
 -- Orders table
 DROP TABLE IF EXISTS bronze.trans_orders;
 
-CREATE TABLE IF NOT EXISTS bronze.trans_orders (
+CREATE TABLE bronze.trans_orders (
 	order_id VARCHAR(30),
 	customer_id VARCHAR(30),
 	order_date TIMESTAMP,
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS bronze.trans_orders (
 -- Order_items table
 DROP TABLE IF EXISTS bronze.trans_order_items;
 
-CREATE TABLE IF NOT EXISTS bronze.trans_order_items (
+CREATE TABLE bronze.trans_order_items (
 	order_id VARCHAR(30),
 	product_id VARCHAR(50),
 	quantity INT,
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS bronze.trans_order_items (
 -- Payemnts table
 DROP TABLE IF EXISTS bronze.trans_payments;
 
-CREATE TABLE IF NOT EXISTS bronze.trans_payments (
+CREATE TABLE bronze.trans_payments (
 	payment_id VARCHAR(30),
 	order_id VARCHAR(30),
 	amount NUMERIC(10,2),
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS bronze.trans_payments (
 -- Shipments table
 DROP TABLE IF EXISTS bronze.trans_shipments;
 
-CREATE TABLE IF NOT EXISTS bronze.trans_shipments (
+CREATE TABLE bronze.trans_shipments (
 	shipment_id VARCHAR(30),
 	order_id VARCHAR(30),
 	shipped_date TIMESTAMP,
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS bronze.trans_shipments (
 -- Events table
 DROP TABLE IF EXISTS bronze.trans_events;
 
-CREATE TABLE IF NOT EXISTS bronze.trans_events (
+CREATE TABLE bronze.trans_events (
 	event_id VARCHAR(50),
 	customer_id VARCHAR(30),
 	product_id VARCHAR(30),
