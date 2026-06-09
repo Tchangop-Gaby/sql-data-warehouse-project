@@ -36,10 +36,9 @@ MESSINESS_RATE = 0.1  # 10% corruption
 # -----------------------------
 users_rows = []
 
-names = [fake.name() for _ in range(N_USERS)]
+for i in range(N_USERS):
+    name = fake.name()
 
-emails = []
-for name in names:
     username = (
         name.lower()
         .replace(" ", "")
@@ -51,17 +50,16 @@ for name in names:
         "outlook.com",
         "hotmail.com"
     ])
-    emails.append(f"{username}@{domain}")
+    email = f"{username}@{domain}"
 
-for i in range(N_USERS):
     signup_date = fake.date_between("-3y", "today")
 
     users_rows.append({
         "customer_id": f"U{100000+i}",
-        "name": names,
+        "name": name,
         "country": fake.country(),
         "signup_date": signup_date,
-        "email": emails,
+        "email": email,
         "updated_at": fake.date_time_between(signup_date, "now")
     })
 
