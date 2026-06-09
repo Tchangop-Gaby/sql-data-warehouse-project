@@ -34,6 +34,8 @@ MESSINESS_RATE = 0.1  # 10% corruption
 # -----------------------------
 # USERS TABLE
 # -----------------------------
+users_rows = []
+
 names = [fake.name() for _ in range(N_USERS)]
 
 emails = []
@@ -51,17 +53,19 @@ for name in names:
     ])
     emails.append(f"{username}@{domain}")
 
-users = pd.DataFrame({
-    "customer_id": [f"U{100000+i}" for i in range(N_USERS)],
-    "name": names,
-    "country": [fake.country() for _ in range(N_USERS)],
-    "signup_date": [fake.date_between("-3y", "today") for _ in range(N_USERS)],
-    "email": emails,
-    "updated_at": [
-        fake.date_time_between("-3y", "now")
-        for _ in range(N_USERS)
-    ]
-})
+for i in range(N_USERS):
+    signup_date = fake.date_between("-3y", "today")
+
+    users_rows.append({
+        "customer_id": f"U{100000+i}",
+        "name": names,
+        "country": fake.country(),
+        "signup_date": signup_date,
+        "email": emails,
+        "updated_at": fake.date_time_between(signup_date, "now")
+    })
+
+users = pd.DataFrame(users_rows)
 
 # introduce messiness
 for i in random.sample(range(N_USERS), int(N_USERS * MESSINESS_RATE)):
