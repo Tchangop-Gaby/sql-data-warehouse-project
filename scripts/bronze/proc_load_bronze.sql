@@ -1,12 +1,20 @@
 /*
 ===============================================================================
-Insert Data into the Tables
+Stored Procedure: Load Bronze Layer (Source -> Bronze)
 ===============================================================================
-Description:
-    Creates or Replace a Stored Procedure in which Data is Inserted using the 
-    Bulk Insert method where all the Data is inserted at the same time
-    instead of inserting the Data Row by Row like in the Classical 
-    Insert.
+Script Purpose:
+    This stored procedure loads data into the 'bronze' schema from external CSV files. 
+    It performs the following actions:
+    - Truncates the bronze tables before loading data.
+    - Uses the `BULK INSERT` command to load data from csv Files to bronze tables.
+
+Parameters:
+    None. 
+	  This stored procedure does not accept any parameters or return any values.
+
+Usage Example:
+    CALL bronze.load_bronze;
+===============================================================================
 */
 
 CREATE OR REPLACE PROCEDURE bronze.load_bronze() LANGUAGE plpgsql
