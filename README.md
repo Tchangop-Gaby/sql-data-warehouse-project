@@ -85,7 +85,7 @@ data-warehouse-project/
 Hi there! I'm **Tchangop Pieumi Gaby Junior**. I'm an Aspiring Data Engineer building Data Projects to gain Hand-on skills to be able to excel in the exciting world of Data
 
 Let's stay in touch! Feel free to connect with me on the following platform:
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](www.linkedin.com/in/gaby-tchangop)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gaby-tchangop?utm_source=share_via&utm_content=profile&utm_medium=member_android)
 
 ---
 
