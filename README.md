@@ -21,12 +21,11 @@ This project involves:
 1. **Data Architecture**: Designing a Modern Data Warehouse Using Medallion Architecture **Bronze**, **Silver**, and **Gold** layers.
 2. **ETL Pipelines**: Extracting, transforming, and loading data from source systems into the warehouse.
 3. **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
-4. **Analytics & Reporting**: Creating SQL-based reports and dashboards for actionable insights.
+4. **Analytics**: Creating SQL-based reports for actionable insights.
 
 ---
 
 ## 🛠️ Important Links & Tools:
-- **[Datasets](datasets/):** Access to the project dataset (csv files).
 - **[PostgreSQL](https://www.postgresql.org/download/):** Server for hosting your SQL database.
 - **[pgAdmin](https://www.pgadmin.org/download/):** GUI for managing and interacting with databases.
 
@@ -63,8 +62,11 @@ data-warehouse-project/
 ├── datasets/                           # Raw datasets used for the project (Master and Transaction data)
 │
 ├── docs/                               # Project documentation and architecture details
-│   ├── data_architecture.drawio        # Draw.io file shows the project's architecture
-│
+│   ├── data_architecture.drawio        # Draw.io file shows the project's architecture 
+|   ├── data_catalog.md                 # Contains detailed Description of the Tables 
+│   ├── data_flow.drawio                # Shows how the Data Flow along the three Layers
+|   ├── data_model                      # Shows how the dimensions and facts connect (Star Schema)
+|
 ├── scripts/                            # SQL scripts for ETL and transformations
 │   ├── bronze/                         # Scripts for extracting and loading raw data
 │   ├── silver/                         # Scripts for cleaning and transforming data
@@ -77,6 +79,14 @@ data-warehouse-project/
 ├── .gitignore                          # Files and directories to be ignored by Git
 └── requirements.txt                    # Dependencies and requirements for the project
 ```
+
+## 🚀 How to Run
+
+1. Install PostgreSQL and pgAdmiN
+3. Use the command line and run `psql -U postgres -h localhost -c 'CREATE DATABASE datawarehouse;`
+4. Then =n run `psql -U postgres -h localhost -d datawarehouse -f init_database.sql`
+5. For each bronze, silver folders, run the DDL script first and then follow the instructions in the comments for the other script
+6. For the gold folder follow the instructions in the comments of the DDL script
 
 ---
 
