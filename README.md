@@ -82,9 +82,9 @@ data-warehouse-project/
 
 ## 🚀 How to Run
 
-1. Install PostgreSQL and pgAdmiN
+1. Install PostgreSQL and pgAdmin
 3. Use the command line and run `psql -U postgres -h localhost -c 'CREATE DATABASE datawarehouse;`
-4. Then =n run `psql -U postgres -h localhost -d datawarehouse -f init_database.sql`
+4. Then run `psql -U postgres -h localhost -d datawarehouse -f init_database.sql`
 5. For each bronze, silver folders, run the DDL script first and then follow the instructions in the comments for the other script
 6. For the gold folder follow the instructions in the comments of the DDL script
 
