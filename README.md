@@ -67,6 +67,8 @@ data-warehouse-project/
 │   ├── data_flow.drawio                # Shows how the Data Flow along the three Layers
 |   ├── data_model                      # Shows how the dimensions and facts connect (Star Schema)
 |
+├── reports/                          # Answer some business questions.
+|
 ├── scripts/                            # SQL scripts for ETL and transformations
 │   ├── bronze/                         # Scripts for extracting and loading raw data
 │   ├── silver/                         # Scripts for cleaning and transforming data
